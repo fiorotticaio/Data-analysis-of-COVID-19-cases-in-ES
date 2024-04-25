@@ -1,3 +1,4 @@
+import pandas as pd
 from datetime import datetime
 
 def get_cities_with_cases_above_threshold(data, threshold):
