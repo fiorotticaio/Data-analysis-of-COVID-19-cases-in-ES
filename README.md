@@ -28,3 +28,8 @@ This repository contains a Python script for analyzing COVID-19 case data. The s
 pip install pandas
 pip install datetime
 ```
+3. Run the script using the following command:
+
+```bash
+python main.py
+```
