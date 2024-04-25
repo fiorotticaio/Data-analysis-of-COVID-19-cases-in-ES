@@ -9,59 +9,76 @@ if __name__ == "__main__":
     data = pd.read_csv(filename, delimiter=';', encoding='latin1', nrows=300000)
 
     # =============== 1 ==============
+    print("======= List states with more than N cases =======")
     # Prompt the user for the value of N
-    # N = int(input("Enter the threshold value (N): "))
+    N = int(input("Enter the threshold value (N): "))
     
-    # # Get the list of cities with more than N cases of COVID-19
-    # cities_above_threshold = get_cities_with_cases_above_threshold(data, N)
+    # Get the list of cities with more than N cases of COVID-19
+    cities_above_threshold = get_cities_with_cases_above_threshold(data, N)
     
-    # # Print cities in alphabetical order
-    # print(f"Cities with more than {N} COVID-19 cases:")
-    # for city in cities_above_threshold:
-    #     print(city)
+    # Print cities in alphabetical order
+    print(f"Cities with more than {N} COVID-19 cases:")
+    for city in cities_above_threshold:
+        print(city)
+
+
+    print("\n\n")
 
 
     # # =============== 2 ==============
-    # # Prompt the user for start_date and end_date
-    # start_date = input("Enter the start date (YYYY-MM-DD): ")
-    # end_date = input("Enter the end date (YYYY-MM-DD): ")
+    print("======= Count cases between dates =======")
+    # Prompt the user for start_date and end_date
+    start_date = input("Enter the start date (YYYY-MM-DD): ")
+    end_date = input("Enter the end date (YYYY-MM-DD): ")
 
-    # # Ensure start_date is earlier than end_date
-    # if start_date >= end_date:
-    #     print("Error: Start date must be earlier than end date.")
-    # else:
-    #     # Count the number of cases between start_date and end_date
-    #     num_cases = count_cases_between_dates(data, start_date, end_date)
-    #     print(f"Number of COVID-19 cases between {start_date} and {end_date}: {num_cases}")
+    # Ensure start_date is earlier than end_date
+    if start_date >= end_date:
+        print("Error: Start date must be earlier than end date.")
+    else:
+        # Count the number of cases between start_date and end_date
+        num_cases = count_cases_between_dates(data, start_date, end_date)
+        print(f"Number of COVID-19 cases between {start_date} and {end_date}: {num_cases}")
+
+
+    print("\n\n")
 
 
     # =============== 3 ==============
+    print("======= List cities with the highest number of cases between dates =======")
     # Prompt the user for start_date and end_date
-    # N = int(input("Enter with the number of cities in the rank: "))
-    # start_date = input("Enter the start date (YYYY-MM-DD): ")
-    # end_date = input("Enter the end date (YYYY-MM-DD): ")
+    N = int(input("Enter with the number of cities in the rank: "))
+    start_date = input("Enter the start date (YYYY-MM-DD): ")
+    end_date = input("Enter the end date (YYYY-MM-DD): ")
 
-    # # Ensure start_date is earlier than end_date
-    # if start_date >= end_date:
-    #     print("Error: Start date must be earlier than end date.")
-    # else:
-    #     # Get the N cities with the highest number of cases between start_date and end_date
-    #     cities_highest_cases = get_cities_with_highest_cases_between_dates(data, N, start_date, end_date)
-    #     print(f"Top {N} cities with the highest number of COVID-19 cases between {start_date} and {end_date}:")
-    #     for city in cities_highest_cases:
-    #         print(city)
+    # Ensure start_date is earlier than end_date
+    if start_date >= end_date:
+        print("Error: Start date must be earlier than end date.")
+    else:
+        # Get the N cities with the highest number of cases between start_date and end_date
+        cities_highest_cases = get_cities_with_highest_cases_between_dates(data, N, start_date, end_date)
+        print(f"Top {N} cities with the highest number of COVID-19 cases between {start_date} and {end_date}:")
+        for city in cities_highest_cases:
+            print(city)
+
+    
+    print("\n\n")
 
 
     # =============== 4 ==============
+    print("======= Calculate percentage metrics =======")
     # Prompt the user for municipality name or leave it blank for all municipalities
-    # municipality = input("Enter the municipality name or leave blank for all municipalities: ")
+    municipality = input("Enter the municipality name or leave blank for all municipalities: ")
 
-    # # Calculate percentage metrics
-    # percentage_metrics = calculate_percentage_metrics(data, municipality)
-    # print(percentage_metrics)
+    # Calculate percentage metrics
+    percentage_metrics = calculate_percentage_metrics(data, municipality)
+    print(percentage_metrics)
+
+
+    print("\n\n")
 
 
     # =============== 5 ==============
+    print("======= Calculate death statistics =======")
     # Prompt the user for start_date and end_date
     start_date = input("Enter the start date (format YYYY-MM-DD): ")
     end_date = input("Enter the end date (format YYYY-MM-DD): ")
