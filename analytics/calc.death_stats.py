@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 # Function to convert age values to numeric format
 def extract_age(value):
     # Checks if the value is a string

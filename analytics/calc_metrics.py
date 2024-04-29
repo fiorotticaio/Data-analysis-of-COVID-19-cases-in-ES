@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def calculate_percentage_metrics(data, municipality=None):
     # Filter data by municipality if specified
     if municipality:

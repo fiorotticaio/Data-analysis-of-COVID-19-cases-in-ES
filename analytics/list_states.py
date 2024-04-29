@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def get_cities_with_cases_above_threshold(data, threshold):
     # Filter the data for cities with more than N cases
     filtered_data = data[data.groupby('Municipio')['DataNotificacao'].transform('size') > threshold]

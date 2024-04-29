@@ -1,6 +1,7 @@
 import pandas as pd
 from datetime import datetime
 
+
 def get_cities_with_highest_cases_between_dates(data, N, start_date, end_date):
     # Convert start_date and end_date to datetime objects
     start_date = datetime.strptime(start_date, "%Y-%m-%d")
